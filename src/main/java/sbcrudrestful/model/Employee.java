@@ -1,18 +1,20 @@
 package sbcrudrestful.model;
 
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Employee {
+    @Id
     private String empNo;
     private String empName;
     private String position;
-
-    public Employee(String empNo, String empName, String position) {
-        this.empNo = empNo;
-        this.empName = empName;
-        this.position = position;
-    }
-
-    public Employee() {
-    }
 
     public String getEmpNo() {
         return empNo;
@@ -36,14 +38,5 @@ public class Employee {
 
     public void setPosition(String position) {
         this.position = position;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "empNo='" + empNo + '\'' +
-                ", empName='" + empName + '\'' +
-                ", position='" + position + '\'' +
-                '}';
     }
 }
